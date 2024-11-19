@@ -1,9 +1,12 @@
 const express = require('express');  
 const mongoose = require('mongoose');  
+
 // const dotenv = require('dotenv');
 const cors = require('cors');  
 const userRoutes = require('./routes/userRoutes');  
-const tourRoutes = require('./routes/tourRoutes');  
+const tourRoutes = require('./routes/tourRoutes');
+const guideRoutes= require('./routes/guideRoutes');  
+
 const Tour = require('./models/Tour');  
 const { faker } = require('@faker-js/faker'); // Sử dụng @faker-js/faker  
 
@@ -39,8 +42,10 @@ const ConnectToMongoDB = async () => {
 
 ConnectToMongoDB();
 
+
 app.use('/api/users', userRoutes);  
 app.use('/api/tours', tourRoutes);  
+app.use('/api/guides', guideRoutes);
 
 app.listen(PORT, () => {  
     console.log(`Server running on http://localhost:${PORT}`);  

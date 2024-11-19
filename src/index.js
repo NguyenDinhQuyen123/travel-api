@@ -23,7 +23,7 @@ console.log("MongoDB URI:", process.env.MONGODB_URI);
 
 const ConnectToMongoDB = async () => {
     try {
-        const conn = await mongoose.connect("mongodb+srv://nguyendinhquyen:nS7RPbIE4yCJNAaN@quyen.0ukw4.mongodb.net/?retryWrites=true&w=majority&appName=quyen")
+        const conn = await mongoose.connect("mongodb+srv://nguyendinhquyen:nS7RPbIE4yCJNAaN@quyen.0ukw4.mongodb.net/travel-db?retryWrites=true&w=majority&appName=quyen")
         console.log(`MongoDB connected: ${conn.connection.host}`);
     } catch (error) {
         console.log("Error to connect to MongoDB", error.message);
